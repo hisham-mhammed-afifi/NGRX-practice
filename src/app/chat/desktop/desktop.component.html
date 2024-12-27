@@ -1,0 +1,29 @@
+<div class="chat-wrapper">
+  <mat-grid-list cols="24" rowHeight="100%" class="w-100">
+    <mat-grid-tile [colspan]="isTablet ? 8 : 6" rowspan="1">
+      <div class="flex flex-column h-100 w-100">
+        <app-filters></app-filters>
+        <app-users></app-users>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="isTablet ? 16 : 18" rowspan="1">
+      <mat-drawer-container>
+        <button mat-icon-button (click)="attrsDrawer.open()">
+          <mat-icon>info</mat-icon>
+        </button>
+        <app-messages></app-messages>
+        <mat-drawer
+          #attrsDrawer
+          [mode]="isDesktop ? 'side' : 'over'"
+          position="end"
+          [opened]="isDesktop"
+        >
+          <button mat-icon-button (click)="attrsDrawer.close()">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+          </button>
+          <app-attrs></app-attrs>
+        </mat-drawer>
+      </mat-drawer-container>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

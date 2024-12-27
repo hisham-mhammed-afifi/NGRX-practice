@@ -1,0 +1,28 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100dvh;
+  width: 100%;
+}
+
+.chat-wrapper {
+  height: 100%;
+  width: 100%;
+  max-width: 1440px;
+  max-height: 920px;
+}
+
+.mat-drawer-container {
+  height: 100%;
+  width: 100%;
+
+  .mat-drawer {
+    min-width: 320px;
+    width: 20vw;
+  }
+}
+
+mat-grid-tile {
+  border: 1px solid #555;
+}

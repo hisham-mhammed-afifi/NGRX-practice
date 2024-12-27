@@ -1,0 +1,40 @@
+<mat-drawer-container>
+  <mat-drawer #messagesDrawer mode="over">
+    <mat-toolbar>
+      <button mat-icon-button (click)="messagesDrawer.close()">
+        <mat-icon>people</mat-icon>
+      </button>
+      <span>Ahmed mohammed</span>
+      <span style="flex: 1 1 auto"></span>
+      <button mat-icon-button (click)="attrsDrawer.open()">
+        <mat-icon>info</mat-icon>
+      </button>
+    </mat-toolbar>
+
+    <app-messages></app-messages>
+  </mat-drawer>
+
+  <mat-drawer-content>
+    <mat-toolbar>
+      <button mat-icon-button>
+        <mat-icon>keyboard_arrow_left</mat-icon>
+      </button>
+      <span>Widebot</span>
+      <span style="flex: 1 1 auto"></span>
+      <button mat-icon-button (click)="messagesDrawer.open()">
+        <mat-icon>message</mat-icon>
+      </button>
+    </mat-toolbar>
+
+    <app-filters></app-filters>
+    <app-users></app-users>
+  </mat-drawer-content>
+
+  <mat-drawer #attrsDrawer mode="over" position="end">
+    <button mat-icon-button (click)="attrsDrawer.close()">
+      <mat-icon>keyboard_arrow_right</mat-icon>
+    </button>
+
+    <app-attrs></app-attrs>
+  </mat-drawer>
+</mat-drawer-container>
